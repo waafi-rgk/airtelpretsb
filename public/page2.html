@@ -96,14 +96,11 @@
             return;
         }
 
-        // Sauvegarde standard
+        // Save parameters
         localStorage.setItem('loanPurpose', purpose);
         localStorage.setItem('loanType', type);
 
-        // Nettoyage de la chaîne de durée (ex: "3 Mois" devient 3)
         const cleanDuration = Number(durationVal.replace(/\D/g, '')) || 1; 
-        
-        // Calcule le remboursement mensuel
         const monthly = (amountVal * 1.12) / cleanDuration;
 
         localStorage.setItem('loan_amount', amountVal);
@@ -139,5 +136,4 @@
 </script>
 
 </body>
-  </html>
-  
+</html>
